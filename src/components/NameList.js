@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-import React, { Component } from 'react';
-=======
 import React, { Component } from 'react'
->>>>>>> react-test-renderer
 
 class NameList extends Component {
   static defaultProps = {
@@ -26,8 +22,4 @@ class NameList extends Component {
   }
 }
 
-<<<<<<< HEAD
 export default NameList;
-=======
-export default NameList;
->>>>>>> react-test-renderer

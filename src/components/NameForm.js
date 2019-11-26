@@ -14,8 +14,7 @@ class NameForm extends Component {
   }
   onSubmit = e => {
     const { name } = this.state
-    const { onInsert } = this.props
-    onInsert(name)
+    this.props.onInsert(name)
     this.setState({
       name: ''
     })
