@@ -1,15 +1,31 @@
-import React from 'react';
-import './App.css';
+import React, { Component } from 'react';
 import Counter from './components/Counter';
+import NameForm from './components/NameForm';
+import NameList from './components/NameList';
 
-function App() {
-  
-  return (
-    <div className="App">
-      <h1>배포 연습중</h1>
-      <Counter />
-    </div>
-  );
+class App extends Component {
+  state = {
+    names: ['벨로퍼트', '김민준']
+  }
+
+  onInsert = (name) => {
+    this.setState(({names}) => ({ names: names.concat(name) }));
+  }
+
+  render() {
+    const { names } = this.state;
+    const { onInsert } = this;
+
+    return (
+      <div>
+        <Counter />
+        <hr />
+        <h1>이름 목록</h1>
+        <NameForm onInsert={onInsert}/>
+        <NameList names={names}/>
+      </div>
+    );
+  }
 }
 
 export default App;
